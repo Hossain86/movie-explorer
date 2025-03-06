@@ -1,0 +1,39 @@
+.movie-box{
+  display: grid;
+  margin: 0 auto;
+  text-align: start;
+  padding: min(10px, 5vw); 
+  max-height: min(450px, 40vw); /* Scales up to 600px but never exceeds 90% of viewport width */
+  min-height: fit-content;
+  max-width: min(220px, 40vw);
+  border-radius: 10px !important;
+  transition: transform 0.3s ease;
+}
+.movie-box:hover{
+  transform: scale(1.1);
+}
+.movie-box img{
+  max-width: 95%;
+}
+.poster-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+}
+
+.rated-label {
+  position: absolute;
+  top: 0px;
+  right: 5px;
+  background: rgba(255, 0, 0, 0.8); /* Red background */
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2px 7px;
+  margin-right: 5px;
+  border-radius: 5px;
+}
+
+
+
+
