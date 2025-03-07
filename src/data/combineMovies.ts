@@ -1,9 +1,8 @@
-import { movieData } from "./movieData"; // Assuming movieData is imported from the correct file
-import { movieTrailers, MovieTrailer } from "./movieTrailers"; // Assuming MovieTrailer is typed correctly
+import { movieData } from "./movieData";
+import { movieTrailers, MovieTrailer } from "./movieTrailers";
 
-// Movie interface updated to allow Trailer to be a string or null
 interface Movie {
-  id: any;
+  id: number;
   Title: string;
   Year: string;
   Rated: string;
@@ -26,21 +25,15 @@ interface Movie {
   Type: string;
   DVD: string;
   BoxOffice: string;
-  Production: string;
-  Website: string;
-  Response: string;
-  Trailer: string | null; // Allow null for the Trailer field
+  Trailer?: string | null; // Optional Trailer
 }
 
 export const combineMovieDataWithTrailers = (): Movie[] => {
-  // For each movie, try to find the matching trailer by Title
-  return movieData.map((movie) => {
-    // Find trailer by Title (or by a unique ID if available)
+  return (movieData || []).map((movie: Movie) => {
     const trailerData: MovieTrailer | undefined = movieTrailers.find(
       (trailer) => trailer.Title === movie.Title
     );
 
-    // Return a new movie object with an extra Trailer property if found
-    return { ...movie, Trailer: trailerData ? trailerData.Trailer : null };
+    return { ...movie, Trailer: trailerData?.Trailer || null };
   });
 };

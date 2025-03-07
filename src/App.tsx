@@ -22,7 +22,7 @@ function App() {
 
 const MainApp = () => {
   const { isDarkMode } = useTheme();
-  const [sortedMovies, setSortedMovies] = useState(movieData);
+  const [, setSortedMovies] = useState(movieData);
 
   // Ensure sortedMovies is initialized with all movies
   useEffect(() => {
