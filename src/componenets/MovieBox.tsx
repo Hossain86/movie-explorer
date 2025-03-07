@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom"; // Import useNavigate for routing
+import { useNavigate } from "react-router-dom";
 import "../styles/movieBox.css";
 
 interface Movie {
@@ -22,14 +22,13 @@ const MovieBox = ({ movie }: { movie: Movie }) => {
   }, []);
 
   const handleMovieClick = () => {
-    navigate(`/movie/${movie.Title}`);
+    const encodedTitle = encodeURIComponent(movie.Title);
+    navigate(`/movie/${encodedTitle}`); // Smooth navigation without reload
   };
 
   return (
     <div className="movie-box mb-4">
-      <div
-        className={`poster-container position-relative sticky ${isLoaded ? "loaded" : ""}`}
-      >
+      <div className={`poster-container position-relative sticky ${isLoaded ? "loaded" : ""}`}>
         {/* Rated Label */}
         <span className="rated-label">{movie.Rated}</span>
 
@@ -50,22 +49,13 @@ const MovieBox = ({ movie }: { movie: Movie }) => {
         <p className="all-p-text">IMDb: {movie.imdbRating}</p>
 
         <small className="d-flex justify-content-between align-items-center w-100 pe-1 py-2">
-          <button
-            className="btn-grad-blue-ash btn btn-sm px-1 py-0 text-white"
-            style={{ fontSize: "clamp(10px, 1.5vw, 14px)" }}
-          >
+          <button className="btn-grad-blue-ash btn btn-sm px-1 py-0 text-white" style={{ fontSize: "clamp(10px, 1.5vw, 14px)" }}>
             {movie.Year}
           </button>
-          <button
-            className="btn btn-sm border rounded-3 px-1 py-0 text-white"
-            style={{ backgroundColor: "#ff5733", fontSize: "clamp(10px, 1.5vw, 14px)" }}
-          >
+          <button className="btn btn-sm border rounded-3 px-1 py-0 text-white" style={{ backgroundColor: "#ff5733", fontSize: "clamp(10px, 1.5vw, 14px)" }}>
             {movie.Runtime}
           </button>
-          <button
-            className="btn btn-sm border rounded-3 px-1 py-0 text-uppercase text-white"
-            style={{ backgroundColor: "#007bff", fontSize: "clamp(10px, 1.5vw, 14px)" }}
-          >
+          <button className="btn btn-sm border rounded-3 px-1 py-0 text-uppercase text-white" style={{ backgroundColor: "#007bff", fontSize: "clamp(10px, 1.5vw, 14px)" }}>
             {movie.Type}
           </button>
         </small>

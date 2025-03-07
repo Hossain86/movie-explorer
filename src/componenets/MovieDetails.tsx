@@ -6,7 +6,10 @@ import { useEffect } from "react";
 const MovieDetails = () => {
   const { title } = useParams();
   const combinedMovies = combineMovieDataWithTrailers();
-  const movie = combinedMovies.find((movie) => movie.Title === title);
+  const decodedTitle = decodeURIComponent(title || "");
+  const movie = combinedMovies.find((m) => m.Title === decodedTitle);
+
+  
   if (!movie) {
     return <div>Movie not found!</div>;
   }

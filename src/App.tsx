@@ -7,7 +7,7 @@ import movieData from "./data/movieData";
 import MovieBox from "./componenets/MovieBox"; // Assuming this path for MovieBox
 import MovieDetails from "./componenets/MovieDetails"; // Assuming this path for MovieDetails
 import MovieList from "./componenets/MovieList";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom"; // Import router components
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import MovieSearchSort from "./componenets/MovieSearchSort";
 import { useState, useEffect } from "react";

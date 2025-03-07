@@ -1,20 +1,25 @@
-// MovieList.tsx
 import React, { useEffect } from "react";
-import  movieData  from "../data/movieData"; // Importing the movieData from movieData.ts
+import movieData from "../data/movieData"; // Importing the movieData
 
 const MovieList: React.FC = () => {
+  // Filtering movies that belong to Animation or Sci-Fi
+  const filteredMovies = movieData.filter((movie) =>
+    movie.Genre.includes("Animation") 
+  // || movie.Genre.includes("Sci-Fi")
+  );
+
   useEffect(() => {
-    // Loop over the movieData and log the titles to the console
-    movieData.forEach((movie) => {
+    // Log only filtered movie titles
+    filteredMovies.forEach((movie) => {
       console.log(movie.Title);
     });
-  }, []);
+  }, [filteredMovies]);
 
   return (
     <div>
-      <h1>Movie List</h1>
+      <h1>Animation & Sci-Fi Movies</h1>
       <ul>
-        {movieData.map((movie, index) => (
+        {filteredMovies.map((movie, index) => (
           <li key={index}>{movie.Title}</li>
         ))}
       </ul>

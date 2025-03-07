@@ -25,9 +25,6 @@ interface Movie {
   Type: string;
   DVD: string;
   BoxOffice: string;
-  Production: string;
-  Website: string;
-  Response: string;
 }
 
 interface MovieSearchSortProps {
