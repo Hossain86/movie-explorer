@@ -27,9 +27,14 @@ const Sidebar = () => {
           onClick={toggleSidebar}
           style={{ zIndex: 1100 }} // Ensuring it's above sidebar
         >
-          🟰
+          <svg width="30" height="30" viewBox="0 0 100 80" fill="#ccc">
+            <rect width="90" height="8"></rect>
+            <rect y="30" width="90" height="8"></rect>
+            <rect y="60" width="90" height="8"></rect>
+          </svg>
+
         </i>
-        <img className="h-7 cursor-pointer" src="../src/assets/favicon.png" alt="Logo" />
+        <img className="h-7 img-fluid custom-logo cursor-pointer" src="../src/assets/vite2.svg" alt="Logo" />
         <h5
           className="all-h-text ms-1 fs-6 cursor-pointer"
           onClick={() => navigate("/")}
@@ -66,19 +71,19 @@ const Sidebar = () => {
         }}
       >
         <div className="d-flex align-items-center border-bottom pb-2">
-          <img className="h-7" src="../src/assets/favicon.png" alt="Logo" />
-          <strong
+        <img className="h-7 img-fluid custom-logo cursor-pointer" src="../src/assets/vite2.svg" alt="Logo" />
+        <strong
             className="ms-2 fs-4 text-warning cursor-pointer"
             onClick={() => navigate("/")}
           >
             MOVIE<span className="text-secondary">ZONE</span>
           </strong>
-          <i
-            className="fa fa-times ms-auto fs-4 cursor-pointer"
+          <p
+            className="cursor-pointer fa fa-times ms-auto fs-4 "
             onClick={() => setIsOpen(false)}
           >
             ✖️
-          </i>
+          </p>
         </div>
         <ul className="list-unstyled mt-3">
           <li

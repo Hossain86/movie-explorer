@@ -1,3 +1,7 @@
+.movie-box-container{
+  margin: 0px;
+  padding: 0px 10px;
+}
 .movie-box{
   display: grid;
   margin: 0 auto;

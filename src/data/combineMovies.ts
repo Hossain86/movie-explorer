@@ -3,6 +3,7 @@ import { movieTrailers, MovieTrailer } from "./movieTrailers"; // Assuming Movie
 
 // Movie interface updated to allow Trailer to be a string or null
 interface Movie {
+  id: any;
   Title: string;
   Year: string;
   Rated: string;

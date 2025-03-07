@@ -1,15 +1,13 @@
-// App.tsx
 import "./App.css";
 import Sidebar from "./layouts/Sidebar";
 import { ThemeProvider, useTheme } from "./layouts/ThemeContext";
 import HomePage from "./componenets/HomePage";
 import movieData from "./data/movieData";
-import MovieBox from "./componenets/MovieBox"; // Assuming this path for MovieBox
 import MovieDetails from "./componenets/MovieDetails"; // Assuming this path for MovieDetails
 import MovieList from "./componenets/MovieList";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import 'bootstrap/dist/css/bootstrap.min.css';
-import MovieSearchSort from "./componenets/MovieSearchSort";
+import MovieSearchAndDisplay from "./componenets/MovieSearchAndDisplay";
 import { useState, useEffect } from "react";
 
 function App() {
@@ -47,18 +45,11 @@ const MainApp = () => {
           {/* Movie route with search/sort controls and movie boxes */}
           <Route
             path="/movie"
-            element={
-              <div className="movie-box-container d-flex justify-content-around flex-wrap">
-                <MovieSearchSort movies={movieData} onSortedMoviesChange={setSortedMovies} />
-                {sortedMovies.map((movie, index) => (
-                  <MovieBox key={index} movie={movie} />
-                ))}
-              </div>
-            }
+            element={<MovieSearchAndDisplay movies={movieData} />}
           />
 
-          {/* MovieDetails route using imdbID as a parameter */}
-          <Route path="/movie/:title" element={<MovieDetails />} />
+          {/* MovieDetails route using id as a parameter */}
+          <Route path="/movie/:id" element={<MovieDetails />} />
         </Routes>
       </main>
     </div>

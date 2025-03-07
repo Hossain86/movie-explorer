@@ -1,18 +1,19 @@
 import { useParams } from "react-router-dom"; // Import useParams to get the route parameter
-import { combineMovieDataWithTrailers } from "../data/combineMovies"; // Import the function to combine data
+import { combineMovieDataWithTrailers } from "../data/combineMovies"; // Import function to combine data
 import "../styles/movieDetails.css"; // Styles for the details page
 import { useEffect } from "react";
 
 const MovieDetails = () => {
-  const { title } = useParams();
-  const combinedMovies = combineMovieDataWithTrailers();
-  const decodedTitle = decodeURIComponent(title || "");
-  const movie = combinedMovies.find((m) => m.Title === decodedTitle);
+  const { id } = useParams(); // Get ID from URL
+  const combinedMovies = combineMovieDataWithTrailers(); // Get combined movie data
 
-  
+  // Find movie by `id` (converted to string for comparison)
+  const movie = combinedMovies.find((m) => m.id.toString() === id);
+
   if (!movie) {
     return <div>Movie not found!</div>;
   }
+
   useEffect(() => {
     window.scrollTo(0, 0); // Scroll to top on page load
   }, []);
@@ -67,7 +68,6 @@ const MovieDetails = () => {
             {movie.Language}
           </button>
           </small>
-          
           <p>
             <strong>Genre:</strong> {movie.Genre}
           </p>
@@ -94,20 +94,20 @@ const MovieDetails = () => {
       <div className="lower-part">
         <div className="left-part2">
           <h5>Watch Trailer✨</h5>
-        {/* Display the trailer if available */}
-        {movie.Trailer && (
-          <iframe
-            width="560"
-            height="315"
-            src={movie.Trailer}
-            title={movie.Title}
-            className="movie-video"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          ></iframe>
-        )}
-</div>
-<div className="right-part2">
+          {/* Display the trailer if available */}
+          {movie.Trailer && (
+            <iframe
+              width="560"
+              height="315"
+              src={movie.Trailer}
+              title={movie.Title}
+              className="movie-video"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          )}
+        </div>
+        <div className="right-part2">
         {/* Ratings */}
         <h5>Ratings:</h5>
         <div className="ratings d-flex align-items-center w-100 ps-2 pe-1 py-2">
