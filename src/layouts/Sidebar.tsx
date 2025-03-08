@@ -13,7 +13,7 @@ const Sidebar: React.FC<SidebarProps> = ({ movies }) => {
   const navigate = useNavigate();
   const [isOpen, setIsOpen] = useState(false);
   const { isDarkMode, toggleTheme } = useTheme();
-  const [filteredMovies, setFilteredMovies] = useState<Movie[]>(movies);
+  const [, setFilteredMovies] = useState<Movie[]>(movies);
 
   const toggleSidebar = () => setIsOpen(!isOpen);
 
