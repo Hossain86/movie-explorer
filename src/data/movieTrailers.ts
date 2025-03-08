@@ -595,6 +595,10 @@ export const movieTrailers: MovieTrailer[] = [
         "Trailer": "https://www.youtube.com/embed/Z5jvQwwHQNY"
       },
       {
+        "Title": "Vinland Saga",
+        "Trailer": "https://www.youtube.com/embed/f8JrZ7Q_p-8?si=278eJauD7fpgWE_T"
+      },
+      {
         "Title": "Amélie",
         "Trailer": "https://www.youtube.com/embed/sECzJY07oK4"
       },
@@ -749,6 +753,14 @@ export const movieTrailers: MovieTrailer[] = [
         {
           "Title": "Pan's Labyrinth",
           "Trailer": "https://www.youtube.com/embed/E7XGNPXdlGQ"
+        },
+        {
+          "Title": "Hunter x Hunter (2011)",
+          "Trailer": "https://www.youtube.com/embed/KeeY2W7phbM?si=vowosHtLVv9vzOsb"
+        },
+        {
+          "Title": "Steins;Gate",
+          "Trailer": "https://www.youtube.com/embed/uMYhjVwp0Fk?si=fd73ASSG18afZdL-"
         },
         {
           "Title": "Ran",

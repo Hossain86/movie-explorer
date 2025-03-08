@@ -17,6 +17,9 @@ const MovieSearchAndDisplay = ({ movies }: { movies: Movie[] }) => {
   const memoizedMovies = useMemo(() => movies as Movie[], [movies]);
    // Access filteredMovies from the location state
    useEffect(() => {
+    if (location.state?.filteredMovies?.length > 0) {
+      setFilteredMovies(location.state.filteredMovies);
+    }
     if (location.state && location.state.filteredMovies) {
       setFilteredMovies(location.state.filteredMovies);
     } else {
@@ -59,20 +62,20 @@ const MovieSearchAndDisplay = ({ movies }: { movies: Movie[] }) => {
   return (
     <div>
       {/* Search & Filter Section */}
-      <div className="d-flex gap-1 mt-4 justify-content-center align-items-center">
+      <div className="d-flex gap-1 mt-4 p-2 justify-content-center align-items-center">
       <img className="h-7 gif-image" src="https://media.giphy.com/media/rPUKu805RPmCViz5EC/giphy.gif?cid=790b7611oyq49vab4bx4qiirtkpbcu9yaag5oaadlgkktyh3&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Logo" />
       <h2>Discover Your Favorite Movies & Series</h2>
       </div>
-      <div className="search-sort-bar  w-100 d-flex gap-2">
+      <div className="search-sort-bar w-100 d-flex gap-2">
         
         <input
           type="text"
-          className="form-control"
+          className="form-control h-25 "
           placeholder="Search by title"
           value={searchQuery}
           onChange={(e) => setSearchQuery(e.target.value.toLowerCase())}
         />
-        <select className="form-select" value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
+        <select className="form-select h-25 " value={selectedGenre} onChange={(e) => setSelectedGenre(e.target.value)}>
           <option value="">All Genres</option>
           {genres.map((genre, idx) => (
             <option key={idx} value={genre}>
@@ -80,7 +83,7 @@ const MovieSearchAndDisplay = ({ movies }: { movies: Movie[] }) => {
             </option>
           ))}
         </select>
-        <select className="form-select" value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
+        <select className="form-select h-25 " value={selectedCountry} onChange={(e) => setSelectedCountry(e.target.value)}>
           <option value="">All Countries</option>
           {countries.map((country, idx) => (
             <option key={idx} value={country}>
@@ -89,7 +92,7 @@ const MovieSearchAndDisplay = ({ movies }: { movies: Movie[] }) => {
           ))}
         </select>
         <select
-          className="form-select"
+          className="form-select h-25 "
           value={sortBy}
           onChange={(e) => setSortBy(e.target.value === "Release Date" ? "Released" : "imdbRating")}
         >
@@ -97,7 +100,7 @@ const MovieSearchAndDisplay = ({ movies }: { movies: Movie[] }) => {
           <option value="Released">Sort by Release Date</option>
         </select>
         {/* Refresh Button */}
-        <button className="btn-grad-orange btn" onClick={handleResetFilters}>
+        <button className="btn-grad-orange btn p-1" onClick={handleResetFilters}>
           Reset Filters
         </button>
       </div>

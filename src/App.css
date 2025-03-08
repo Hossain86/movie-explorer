@@ -39,7 +39,10 @@ main {
 .gif-image{
   height: min(80px, 15vw);
 }
-
+.list-item{
+  list-style: none !important;
+  line-height: 1.8;
+}
 
 /* Light Mode Styles */
 .light-mode {

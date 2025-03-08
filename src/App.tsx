@@ -40,7 +40,7 @@ const MainApp = () => {
       >
         <Routes>
           {/* HomePage route */}
-          <Route path="/" element={<HomePage />} />
+          <Route path="/" element={<HomePage  movies={movieData} />} />
 
           {/* MovieList route */}
           <Route path="/movie-list" element={<MovieList />} />

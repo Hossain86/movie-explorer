@@ -22,7 +22,6 @@ const Sidebar: React.FC<SidebarProps> = ({ movies }) => {
       setIsOpen(false);
     }
   };
-  
 
   const filterByGenre = (genre: string) => {
     const filtered = movies.filter((movie) =>
@@ -41,7 +40,7 @@ const Sidebar: React.FC<SidebarProps> = ({ movies }) => {
   };
 
   const filterByFeatured = () => {
-    const topMovies = featureMovies(movies); 
+    const topMovies = featureMovies(movies);
     setFilteredMovies(topMovies);
     navigate("/movie", { state: { filteredMovies: topMovies } });
   };
@@ -53,10 +52,17 @@ const Sidebar: React.FC<SidebarProps> = ({ movies }) => {
           className="fa fa-bars menu-btn cursor-pointer fs-4 me-3 position-relative"
           onClick={toggleSidebar}
           style={{ zIndex: 1100 }}
+        ></i>
+        <img
+          className="h-7 img-fluid custom-logo cursor-pointer"
+          src="https://media.giphy.com/media/Glf4jsOxuHFL2aUojg/giphy.gif?cid=ecf05e47hxlg03d8pzzm23c2glv0cdtm1ptvpeoj49nhuixm&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+          alt="Logo"
+          onClick={() => navigate("/")}
+        />
+        <h5
+          className="all-h-text ms-1 fs-6 cursor-pointer"
+          onClick={() => navigate("/movie")}
         >
-        </i>
-        <img className="h-7 img-fluid custom-logo cursor-pointer" src="https://media.giphy.com/media/Glf4jsOxuHFL2aUojg/giphy.gif?cid=ecf05e47hxlg03d8pzzm23c2glv0cdtm1ptvpeoj49nhuixm&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Logo" />
-        <h5 className="all-h-text ms-1 fs-6 cursor-pointer" onClick={() => navigate("/movie")}>
           MOVIE<span className="text-warning">ZONE</span>
         </h5>
 
@@ -86,48 +92,93 @@ const Sidebar: React.FC<SidebarProps> = ({ movies }) => {
         }}
       >
         <div className="d-flex align-items-center border-bottom pb-2">
-          <img className="h-7 img-fluid custom-logo cursor-pointer" src="https://media.giphy.com/media/Glf4jsOxuHFL2aUojg/giphy.gif?cid=ecf05e47hxlg03d8pzzm23c2glv0cdtm1ptvpeoj49nhuixm&ep=v1_stickers_search&rid=giphy.gif&ct=s" alt="Logo" />
-          <strong className="ms-2 fs-4 text-warning cursor-pointer" onClick={() => navigate("/")}>
+          <img
+            className="h-7 img-fluid custom-logo cursor-pointer"
+            src="https://media.giphy.com/media/Glf4jsOxuHFL2aUojg/giphy.gif?cid=ecf05e47hxlg03d8pzzm23c2glv0cdtm1ptvpeoj49nhuixm&ep=v1_stickers_search&rid=giphy.gif&ct=s"
+            alt="Logo"
+          />
+          <strong
+            className="ms-2 fs-4 text-warning cursor-pointer"
+            onClick={() => navigate("/")}
+          >
             MOVIE<span className="text-secondary">ZONE</span>
           </strong>
-          <p className="cursor-pointer fa fa-times ms-auto fs-4 " onClick={() => setIsOpen(false)}>
+          <p
+            className="cursor-pointer fa fa-times ms-auto fs-4 "
+            onClick={() => setIsOpen(false)}
+          >
             ✖️
           </p>
         </div>
         <ul className="list-unstyled mt-3">
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => navigate("/movie")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => navigate("/movie")}
+          >
             <i className="fa fa-home me-2"></i> Home
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByType("movie")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByType("movie")}
+          >
             <i className="fa fa-film me-2"></i> Movies
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByType("series")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByType("series")}
+          >
             <i className="fa fa-tv me-2"></i> Series
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Animation")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Animation")}
+          >
             <i className="fa fa-heart me-2"></i> Favourites
           </li>
-          <li className="p-2 text-uppercase small text-muted">Popular Genres</li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Action")}>
+          <li className="p-2 text-uppercase small text-muted">
+            Popular Genres
+          </li>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Action")}
+          >
             <i className="fa fa-bolt me-2"></i> Action
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Adventure")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Adventure")}
+          >
             <i className="fa fa-cogs me-2"></i> Adventure
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Animation")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Animation")}
+          >
             <i className="fa fa-theater-masks me-2"></i> Anime
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Thriller")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Thriller")}
+          >
             <i className="fa fa-shield-alt me-2"></i> Thriller
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("Comedy")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("Comedy")}
+          >
             <i className="fa fa-laugh me-2"></i> Comedy
           </li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer" onClick={() => filterByGenre("War")}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer"
+            onClick={() => filterByGenre("War")}
+          >
             <i className="fa fa-heart me-2"></i> War
           </li>
           <li className="p-2 text-uppercase small text-muted">Extra</li>
-          <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer "onClick={()=>filterByFeatured()}>
+          <li
+            className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer "
+            onClick={() => filterByFeatured()}
+          >
             <i className="fa fa-star me-2"></i> Featured Movies
           </li>
           <li className="p-2 d-flex align-items-center text-dark hover-bg-light cursor-pointer">

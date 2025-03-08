@@ -4,8 +4,7 @@ import movieData from "../data/movieData"; // Importing the movieData
 const MovieList: React.FC = () => {
   // Filtering movies that belong to Animation or Sci-Fi
   const filteredMovies = movieData.filter((movie) =>
-    movie.Genre.includes("Animation") 
-  // || movie.Genre.includes("Sci-Fi")
+ movie.Genre.includes("Sci-Fi")
   );
 
   useEffect(() => {

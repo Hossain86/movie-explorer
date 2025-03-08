@@ -11299,7 +11299,9 @@ export const movieData: Movie[]= [
         "DVD": "01 Aug 2006",
         "BoxOffice": "$184,208,848",
         "id": 300
-    }
+    },
+    
+    
 ]
 
   movieData.forEach((movie) => {
