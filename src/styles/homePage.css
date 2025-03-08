@@ -1,0 +1,29 @@
+.lower-part{
+  display: flex;
+  max-width: 1250px;
+  
+  justify-items: center;
+  text-align: justify;
+  padding: min(50px, 5vw);
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.left-part{
+  flex: 0.8;
+}
+.right-part{
+  flex: 2;
+}
+
+.right-part{
+  flex: 1;
+}
+.gif-image2{
+  width: min(220px, 40vw);
+}
+
+@media (max-width: 800px){
+  .lower-part{
+    flex-direction: column;
+  }
+}
