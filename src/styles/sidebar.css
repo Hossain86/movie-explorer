@@ -6,4 +6,14 @@
   max-width: 30px; /* Adjust this value as needed */
   height: auto;
 }
+/* Add to sidebar.css */
+.sidebar .cursor-pointer {
+  cursor: pointer;
+}
+
+/* Optionally, you can also ensure hover effects */
+.sidebar .list-unstyled li:hover {
+  background-color: #f4ebeb;
+}
+
 

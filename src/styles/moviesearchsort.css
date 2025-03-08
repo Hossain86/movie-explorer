@@ -28,7 +28,9 @@
 .search-sort-bar {
   display: flex;
   gap: 10px;
-  padding:  min(50px, 5vw) ;
+  padding-right:  min(50px, 5vw) ;
+  padding-left:  min(50px, 5vw) ;
+  padding-bottom:  min(20px, 5vw) ;
 }
 @media (max-width:600px){
   .movie-sort-container{
