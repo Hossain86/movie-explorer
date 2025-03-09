@@ -2,10 +2,6 @@
 
 MovieZone is a modern and interactive movie browsing application built with React and TypeScript. It allows users to explore, search, and discover movies with a sleek and user-friendly interface.
 
-## 📷 Screenshot
-
-![image](https://github.com/user-attachments/assets/e9866787-9eed-46d2-9e93-c69c9da95abc)
-
  ## 🚀 Technologies Used
 - **React ⚛️ (with Vite)**
 - **TypeScript 🏗️**
@@ -29,3 +25,8 @@ MovieZone is a modern and interactive movie browsing application built with Reac
 
 ## 📞 Contact
 For feedback, reach out at **[aftabhossainmikat@gmail.com](mailto:aftabhossainmikat@gmail.com)**.
+
+## 📷 Screenshot
+
+![image](https://github.com/user-attachments/assets/e9866787-9eed-46d2-9e93-c69c9da95abc)
+
