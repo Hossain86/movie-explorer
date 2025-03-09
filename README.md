@@ -1,54 +1,33 @@
-# React + TypeScript + Vite
+# 🎬 MovieZone
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+MovieZone is a modern and interactive movie browsing application built with React and TypeScript. It allows users to explore, search, and discover movies with a sleek and user-friendly interface.
 
-Currently, two official plugins are available:
+## 📷 Screenshot
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+![image](https://github.com/user-attachments/assets/43f6e3ad-0c31-4914-b12d-0dfc8036dabd)
+![image](https://github.com/user-attachments/assets/e9866787-9eed-46d2-9e93-c69c9da95abc)
+![image](https://github.com/user-attachments/assets/8ebe9d76-1066-437f-b295-86ed2f2d202e)
 
-## Expanding the ESLint configuration
+ ## 🚀 Technologies Used
+- **React ⚛️ (with Vite)**
+- **TypeScript 🏗️**
+- **Bootstrap 🎨**
+- **JSON 🎥 (for fetching movie details)**
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+ ### ✨ Features
+- **🔍 Search Movies - Find your favorite movies instantly.**
+- **🎭 Movie Details - View detailed information, including ratings and genres.**
+- **📌 Trending Movies - Browse the latest trending movies.**
+- **❤️ Add to Favorites - Save your favorite movies for quick access.**
+- **🌙 Dark Mode - Enjoy a sleek dark theme for a better experience.**
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+#### 🔮 Upcoming Features
+- 🎟 User Authentication - Sign in to create a personal watchlist.
+- ⭐ Movie Reviews & Ratings - Leave reviews and rate movies.
+- 📽 Trailer Previews - Watch official trailers within the app.
+- 📅 Upcoming Movie Reminders - Get notified about upcoming releases.
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+*[Click Here](https://movie-explorer-silk-one.vercel.app/)**
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
-```
+## 📞 Contact
+For feedback, reach out at **[aftabhossainmikat@gmail.com](mailto:aftabhossainmikat@gmail.com)**.
